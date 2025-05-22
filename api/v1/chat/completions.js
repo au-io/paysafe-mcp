@@ -1,4 +1,7 @@
 export default async function handler(req, res) {
+  res.setHeader("Access-Control-Allow-Origin", "https://platform.openai.com");
+  res.setHeader("Access-Control-Allow-Headers", "*");
+
   const { messages, functions } = req.body;
 
   const latest = messages[messages.length - 1];
